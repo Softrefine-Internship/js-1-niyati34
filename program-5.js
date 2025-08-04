@@ -11,3 +11,23 @@ Given an integer array flowerbed containing 0's and 1's, where 0 means empty and
 // Example 2:
 // Input: flowerbed = [1,0,0,0,1], n = 2
 // Output: false
+function isplanted(flowerbed, n) {
+  for (let i = 0; i < flowerbed.length; i++) {
+    if (
+      flowerbed[i] === 0 &&
+      (i === 0 || flowerbed[i - 1] === 0) &&
+      (i === flowerbed.length - 1 || flowerbed[i + 1] === 0)
+    ) {
+      flowerbed[i] = 1;
+      n--;
+
+      if (n === 0) return true;
+    }
+  }
+
+  return n <= 0;
+}
+
+let flowerbed = [1, 0, 0, 0, 1];
+let flowers = 2;
+console.log(isplanted(flowerbed, flowers));
