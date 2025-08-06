@@ -8,10 +8,10 @@
 
 function merger_sortedarray(arr1, arr2) {
   const mergedArray = arr1.concat(arr2);
-  return mergedArray.sort();
+  return mergedArray.sort((a, b) => a - b);
 }
 
-let arr1 = [3, 5, 1];
-let arr2 = [4, 2];
+let arr1 = [-3, 5, 1];
+let arr2 = [4, -2];
 
 console.log(merger_sortedarray(arr1, arr2));
